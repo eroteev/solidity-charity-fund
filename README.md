@@ -1,47 +1,43 @@
-# Hardhat Library Project
+# Hardhat Charity Fund Project
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+Task Name: "Charity Fund Smart Contract"
 
-Try running some of the following tasks:
+Develop a simple smart contract (dApp) using Solidity.
+
+The smart contract must accomplish the following:
+
+Fund creation: The contract owner (the address which deploys the contract) should be able to create a new charity fund with a specific cause and a target amount in Ether.
+
+Donation: Any Ethereum address should be able to donate Ether to a charity fund. The contract should prevent donations that would exceed the fund's target amount.
+
+Fund completion: Once the target amount of a fund is reached, the fund should automatically close and no further donations should be accepted. The contract owner should be able to withdraw the funds.
+
+Transparency: The contract should also be able to provide public view functions to check the total amount donated to a fund, the remaining amount needed to reach the target, and whether the fund is still open or closed.
+
+Bonus: Implement a refund function where if the fund's target amount is not reached within a certain time frame, donors can get their donations refunded.
+
+Expected Outcomes:
+
+Smart Contract that accomplishes the above features.
+A test suite to ensure the contract works as expected.
+
+# Tests
 
 ```shell
-npx hardhat help
 npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.ts
-npx hardhat deploy
 ```
-
-Deploying and verifying the contract on Sepolia network
-```
-npx hardhat --network sepolia deploy-with-pk --private-key <DEPLOYER_PK>
-Deploying contract from account: 0x31351f3e205F5840B65D0a21F40d9Ffb6B55ca7d
-The contract is deployed to 0x631fb9AC66245bfbeb607F5820B1569AB34F7c48
-The contract owner is 0x31351f3e205F5840B65D0a21F40d9Ffb6B55ca7d
-
-npx hardhat verify 0x631fb9AC66245bfbeb607F5820B1569AB34F7c48 --network sepolia
-Successfully submitted source code for contract
-contracts/Library.sol:Library at 0x631fb9AC66245bfbeb607F5820B1569AB34F7c48
-for verification on the block explorer. Waiting for verification result...
-
-Successfully verified contract Library on the block explorer.
-https://sepolia.etherscan.io/address/0x631fb9AC66245bfbeb607F5820B1569AB34F7c48#code
-
-```
-
-Verified contract link: https://sepolia.etherscan.io/address/0x631fb9AC66245bfbeb607F5820B1569AB34F7c48#code
-
 
 Coverage report
 ```
---------------|----------|----------|----------|----------|----------------|
-File          |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
---------------|----------|----------|----------|----------|----------------|
- contracts/   |      100 |      100 |      100 |      100 |                |
-  Library.sol |      100 |      100 |      100 |      100 |                |
-  Lock.sol    |      100 |      100 |      100 |      100 |                |
---------------|----------|----------|----------|----------|----------------|
-All files     |      100 |      100 |      100 |      100 |                |
---------------|----------|----------|----------|----------|----------------|
+------------------|----------|----------|----------|----------|----------------|
+File              |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
+------------------|----------|----------|----------|----------|----------------|
+ contracts/       |      100 |      100 |      100 |      100 |                |
+  CharityFund.sol |      100 |      100 |      100 |      100 |                |
+  Lock.sol        |      100 |      100 |      100 |      100 |                |
+------------------|----------|----------|----------|----------|----------------|
+All files         |      100 |      100 |      100 |      100 |                |
+------------------|----------|----------|----------|----------|----------------|
+
+> Istanbul reports written to ./coverage/ and ./coverage.json
 ```

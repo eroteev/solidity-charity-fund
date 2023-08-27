@@ -3,7 +3,7 @@ import { expect } from "chai";
 import { ethers } from "hardhat";
 import { CharityFund } from "../typechain-types";
 
-describe.only("CharityFund", function () {
+describe("CharityFund", function () {
     function fund1() {
         return [1, "Animal Walfare", ethers.parseUnits("0.5", "ether"), "3600"];
     }
